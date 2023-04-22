@@ -1,4 +1,6 @@
 class NotesController < ApplicationController
+  before_action :check_for_login
+
   def new
     @note = Note.new
   end
@@ -25,6 +27,7 @@ class NotesController < ApplicationController
 
   def show
     @note = Note.find params[:id]
+    @discussion = Discussion.new
   end
 
   def destroy

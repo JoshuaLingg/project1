@@ -15,6 +15,7 @@
         <%= link_to "Home", root_path %>
         <%= link_to "Add Note", new_note_path %>
         <%= link_to "Log Out (#{@current_user.name})", login_path, :method => :delete %>
+        <%= link_to "Edit", new_discussion_path %>
       <% else %>
         <%= link_to "Home", root_path %>
         <%= link_to "sign in", login_path%>
