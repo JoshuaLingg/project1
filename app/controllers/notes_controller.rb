@@ -5,7 +5,7 @@ class NotesController < ApplicationController
 
   def create 
     note = Note.create note_params
-    redirect_to note_index
+    redirect_to notes_path
   end
 
   def index
@@ -24,6 +24,12 @@ class NotesController < ApplicationController
 
   def show
     @note = Note.find params[:id]
+  end
+
+  def destroy
+    note = Note.find params[:id]
+    note.destroy
+    redirect_to root_path
   end
 
   private

@@ -3,3 +3,5 @@
 <%= @note.message %>
 
 <%= image_tag @note.image %>
+<%= link_to "Edit", edit_note_path(@note) %>
+<%= link_to "Delete", @note, :method => :delete, :data => { :confirm => "Are you sure you want to delete '#{@note.title}'?"}%>
