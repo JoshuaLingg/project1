@@ -1,5 +1,7 @@
 <h1><%= @note.title %></h1>
-
+<% if @note.user.present? %>
+        <p>Written by: <%= @note.user.name%></p>
+<% end %>
 <%= @note.message %>
 
 <%= image_tag @note.image %>

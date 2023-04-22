@@ -3,7 +3,9 @@
 <% @notes.each do |note| %>
   <%= link_to note do %>
     <h2 class="index_title"><%= note.title %></h2>
-
+    <% if note.user.present? %>
+        <p>Written by: <%= note.user.name%></p>
+    <% end %>
     <p class="index_msg"><%= note.message %></p>
 
     <%= image_tag(note.image, :class => "index_img") %>

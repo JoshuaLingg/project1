@@ -5,6 +5,7 @@ class NotesController < ApplicationController
 
   def create 
     note = Note.create note_params
+    @current_user.notes << note
     redirect_to notes_path
   end
 
@@ -34,7 +35,7 @@ class NotesController < ApplicationController
 
   private
   def note_params
-    params.require(:note).permit(:title, :message, :image)
+    params.require(:note).permit(:title, :message, :image, :user_id)
   end
 
 end
