@@ -28,6 +28,7 @@ class NotesController < ApplicationController
   def show
     @note = Note.find params[:id]
     @discussion = Discussion.new
+    @discussions = Discussion.all
   end
 
   def destroy

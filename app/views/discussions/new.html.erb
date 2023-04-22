@@ -4,6 +4,7 @@
 <%= form_for @discussion do |f| %>
   <%= f.label :message %>
   <%= f.text_field :message %>
+  <%= hidden_field_tag :note_id, params[:id] %>
 
   <%= f.submit %>
 <% end %>

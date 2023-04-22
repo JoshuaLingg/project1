@@ -1,2 +1,6 @@
 <h1>Discussions#show</h1>
 <p>Find me in app/views/discussions/show.html.erb</p>
+
+<% @discussions.each do |discussion|%>
+  <p><%= discussion.message %></p> 
+<% end %>
