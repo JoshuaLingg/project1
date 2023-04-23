@@ -1,10 +1,4 @@
 <h1>Discussions#new</h1>
 <p>Find me in app/views/discussions/new.html.erb</p>
 
-<%= form_for @discussion do |f| %>
-  <%= f.label :message %>
-  <%= f.text_field :message %>
-  <%= hidden_field_tag :note_id, params[:id] %>
-
-  <%= f.submit %>
-<% end %>
+<%= render :partial => 'discussion_form' %>

@@ -1,5 +1,4 @@
 class NotesController < ApplicationController
-  before_action :check_for_login
 
   def new
     @note = Note.new
