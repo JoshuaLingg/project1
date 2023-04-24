@@ -6,7 +6,11 @@
     <h3><%= discussion.user.name%></h3>  
   <% end %>
   <p><%= discussion.message %></p>
-  <%= link_to "Edit", edit_discussion_path(discussion) %> 
-  <%= link_to "Delete", discussion, :method => :delete, :data => { :confirm => "Are you sure you want to delete '#{discussion.message}'?"}%>
+
+  <% if @current_user == discussion.user%>
+    <%= link_to "Edit", edit_discussion_path(discussion) %> 
+    <%= link_to "Delete", discussion, :method => :delete, :data => { :confirm => "Are you sure you want to delete '#{discussion.message}'?"}%>
+  <% end %>
+
 
 <% end %>

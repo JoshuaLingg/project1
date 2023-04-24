@@ -1,12 +1,16 @@
 <h1><%= @note.title %></h1>
 <% if @note.user.present? %>
-        <p>Written by: <%= @note.user.name%></p>
+  <p>Written by: <%= @note.user.name%></p>
 <% end %>
 <%= @note.message %>
 
 <%= image_tag @note.image %>
-<%= link_to "Edit", edit_note_path(@note) %>
-<%= link_to "Delete", @note, :method => :delete, :data => { :confirm => "Are you sure you want to delete '#{@note.title}'?"}%>
+
+<% if @current_user == @note.user%>
+  <%= link_to "Edit", edit_note_path(@note) %>
+  <%= link_to "Delete", @note, :method => :delete, :data => { :confirm => "Are you sure you want to delete '#{@note.title}'?"}%>
+
+<% end %>
 
 <%= render template: 'discussions/show' %>
 

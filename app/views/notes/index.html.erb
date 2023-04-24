@@ -10,5 +10,8 @@
 
     <%= image_tag(note.image, :class => "index_img") %>
   <% end %>
-  <%= link_to "Edit", edit_note_path(note.id) %>
+
+  <% if @current_user == note.user%>
+    <%= link_to "Edit", edit_note_path(note.id) %>
+  <% end %>
 <% end %>
