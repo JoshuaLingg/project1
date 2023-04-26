@@ -8,9 +8,11 @@
     <% end %>
     <p class="index_msg"><%= note.message %></p>
 
-    <p class="comment_count"><%= pluralize(note.discussions.size, 'comment') %></p>
 
     <%= image_tag(note.image, :class => "index_img") %>
+
+    <p class="comment_count"><%= pluralize(note.discussions.size, 'comment') %></p>
+
   <% end %>
 
   <% if @current_user == note.user%>

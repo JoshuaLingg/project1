@@ -1,12 +1,12 @@
 <%= form_for @note do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.label :title, :class => 'form-label' %>
+  <%= f.text_field :title, :class => 'form-control' %>
 
-  <%= f.label :message %>
-  <%= f.text_field :message %>
+  <%= f.label :message, :class => 'form-label' %>
+  <%= f.text_field :message, :class => 'form-control' %>
 
-  <%= f.label :image %>
-  <%= f.url_field :image %>
+  <%= f.label :image, :class => 'form-label' %>
+  <%= f.url_field :image, :class => 'form-control' %>
 
-  <%= f.submit %>
+  <%= f.submit "New Form", :class => 'btn btn-primary'%>
 <% end %>
