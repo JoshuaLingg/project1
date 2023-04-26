@@ -1,9 +1,13 @@
 <%= form_for @discussion do |f| %>
-  <%= f.label :message, :class => 'form-label' %>
-  <%= f.text_area :message, size: "60x6", :class => 'form-control' %>
-  
-  <%= hidden_field_tag :note_id, params[:id] %>
-  <%= hidden_field_tag :user_id, params[:user_id] %>
+  <div class="mb-3">
+    <h3><%= f.label :message, :class => 'form-label title1' %></h3>
+    <%= f.text_area :message, size: "60x6", :class => 'form-control' %>
+  </div>
+    
+  <div class="mb-3">
+    <%= hidden_field_tag :note_id, params[:id] %>
+    <%= hidden_field_tag :user_id, params[:user_id] %>
+  </div>
 
   <%= f.submit " Add Comment", :class => 'btn btn-primary'%>
 <% end %>

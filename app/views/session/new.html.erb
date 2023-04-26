@@ -1,3 +1,5 @@
+<div class = 'text-center login-container container'>
+
 <h1>Log In</h1>
 
 <% if flash[:error].present?%>
@@ -5,11 +7,17 @@
 <% end %>
 
 <%= form_tag login_path do %>
-  <%= label_tag :name, nil, :class => 'form-label' %>
-  <%= text_field_tag :name, nil, :class => 'form-control' %>
+  <div class="mb-3">
+    <%= label_tag :name, nil, :class => 'form-label' %>
+    <%= text_field_tag :name, nil, :class => 'form-control' %>
+  </div>
 
-  <%= label_tag :password, nil, :class => 'form-label' %>
-  <%= password_field_tag :password, nil, :class => 'form-control' %>
+  <div class="mb-3">
+    <%= label_tag :password, nil, :class => 'form-label' %>
+    <%= password_field_tag :password, nil, :class => 'form-control' %>
+  </div>
 
   <%= submit_tag "Log In", :class => 'btn btn-primary' %>
 <% end %>
+
+</div>

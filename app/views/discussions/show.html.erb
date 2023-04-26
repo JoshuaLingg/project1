@@ -1,16 +1,24 @@
-<h1>Discussions#show</h1>
-<p>Find me in app/views/discussions/show.html.erb</p>
 
-<% @discussions.where(note_id: @note).each do |discussion|%>
-  <% if discussion.user.present? %>
-    <h3><%= discussion.user.name%></h3>  
+<div class="title1">
+  <h1>Discussion</h1>
+</div>
+<div class="container">
+  <% @discussions.where(note_id: @note).each do |discussion|%>
+    <% if discussion.user.present? %>
+      <h3><%= discussion.user.name%></h3>  
+    <% end %>
+    <div class="container">
+      <p><%= discussion.message %></p>
+    </div>
+    
+    <div class="container">
+      <% if @current_user == discussion.user%>
+        <%= link_to "Edit", edit_discussion_path(discussion) %> 
+        <%= link_to "Delete", discussion, :method => :delete, :data => { :confirm => "Are you sure you want to delete '#{discussion.message}'?"}%>
+      <% end %>
+    </div>
+    
+
+
   <% end %>
-  <p><%= discussion.message %></p>
-
-  <% if @current_user == discussion.user%>
-    <%= link_to "Edit", edit_discussion_path(discussion) %> 
-    <%= link_to "Delete", discussion, :method => :delete, :data => { :confirm => "Are you sure you want to delete '#{discussion.message}'?"}%>
-  <% end %>
-
-
-<% end %>
+</div>

@@ -1,17 +1,31 @@
-<h1><%= @note.title %></h1>
-<% if @note.user.present? %>
-  <p>Written by: <%= @note.user.name%></p>
-<% end %>
-<%= @note.message %>
 
-<%= image_tag @note.image %>
+<div class = 'container-lg title1'>
+  <h1><%= @note.title %></h1>
+  <div class="container-lg">
+    <% if @note.user.present? %>
+      <p>Written by: <%= @note.user.name%></p>
+    <% end %>
+  </div>
+  <div class="container-lg paragraph">
+    <%= @note.message %>
+  </div>
+  
+  <div class="container-lg">
+    <%= image_tag @note.image, :class => 'img-fluid' %>
+  </div>
+  
 
-<% if @current_user == @note.user%>
-  <%= link_to "Edit", edit_note_path(@note) %>
-  <%= link_to "Delete", @note, :method => :delete, :data => { :confirm => "Are you sure you want to delete '#{@note.title}'?"}%>
+  <div class="container-lg">
+    <% if @current_user == @note.user%>
+      <%= link_to "Edit", edit_note_path(@note) %>
+      <%= link_to "Delete", @note, :method => :delete, :data => { :confirm => "Are you sure you want to delete '#{@note.title}'?"}%>
 
-<% end %>
+    <% end %>
+  </div>
+  
 
-<%= render template: 'discussions/show' %>
+  <%= render template: 'discussions/show' %>
 
-<%= render template: 'discussions/new' %>
+  <%= render template: 'discussions/new' %>
+
+</div>

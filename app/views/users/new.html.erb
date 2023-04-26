@@ -1,14 +1,24 @@
-<h1>Create New Account</h1>
 
-<%= form_for @user do |f|%>
-    <%= f.label :name, :class => 'form-label' %>
-    <%= f.text_field :name, :class => 'form-control' %>
+<div class = 'text-center login-container container'>
+    <h1>Create New Account</h1>
+    <%= form_for @user do |f|%>
+        <div class="mb-3">
+            <%= f.label :name, :class => 'form-label' %>
+            <%= f.text_field :name, :class => 'form-control' %>
+        </div>
 
-    <%= f.label :password, :class => 'form-label' %>
-    <%= f.password_field :password, :class => 'form-control' %>
+        <div class="mb-3">
+            <%= f.label :password, :class => 'form-label' %>
+            <%= f.password_field :password, :class => 'form-control' %>
+        </div>
+        
+        <div class="mb-3">
+            <%= f.label :password_confirmation, :class => 'form-label' %>
+            <%= f.password_field :password_confirmation, :class => 'form-control' %>
 
-    <%= f.label :password_confirmation, :class => 'form-label' %>
-    <%= f.password_field :password_confirmation, :class => 'form-control' %>
+        </div>
 
-    <%= f.submit "sign up", :class => 'btn btn-primary' %>
-<% end %>
+        <%= f.submit "sign up", :class => 'btn btn-primary' %>
+    <% end %>
+    
+</div>

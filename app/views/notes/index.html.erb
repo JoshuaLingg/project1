@@ -1,21 +1,30 @@
-<h1>All Notes</h1>
-
-<% @notes.each do |note| %>
-  <%= link_to note do %>
-    <h2 class="index_title"><%= note.title %></h2>
-    <% if note.user.present? %>
-        <p>Written by: <%= note.user.name%></p>
-    <% end %>
-    <p class="index_msg"><%= note.message %></p>
-
-
-    <%= image_tag(note.image, :class => "index_img") %>
-
-    <p class="comment_count"><%= pluralize(note.discussions.size, 'comment') %></p>
-
+<h1 class = 'container-lg title1' >All Notes</h1>
+<div class="container-lg">
+  <% @notes.each do |note| %>
+  <% if @notes.index(note).odd?%>
+    <div class = 'odd_note'>
   <% end %>
+      <%= link_to note, :class => 'index-text' do %>
+      <div class="container-lg">
+        <h2 class="title1"><%= note.title %></h2>
+          <% if note.user.present? %>
+              <p>Written by: <%= note.user.name%></p>
+          <% end %>
+          <p class="index_msg"><%= note.message %></p>
 
-  <% if @current_user == note.user%>
-    <%= link_to "Edit", edit_note_path(note.id) %>
+
+          <%= image_tag(note.image, :class => "img-fluid") %>
+
+          <p><%= pluralize(note.discussions.size, 'comment') %></p>
+
+        <% end %>
+
+        <% if @current_user == note.user%>
+          <%= link_to "Edit", edit_note_path(note.id) %>
+        <% end %>
+      </div>
+    </div>
+      
   <% end %>
-<% end %>
+</div>
+

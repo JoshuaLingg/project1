@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.title1 {
+  margin: 20px 0 5px 0;
+}
+
+.paragraph {
+  margin: 10px 0
+}
+
+.login-container {
+  max-width: 500px;
+}
+
+.navbar1 {
+  background-color: grey;
+  padding: 10px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  padding: 0 5px;
+  color: blue;
+}
+
+.navbar-link:hover {
+  color: aquamarine;
+}
+
+.nav-title {
+  text-align: left;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.index-text {
+  text-decoration: none;
+  color: black;
+}
+
+.odd_note {
+  background-color: rgb(183, 183, 183);
+}
