@@ -24,6 +24,12 @@ class DiscussionsController < ApplicationController
     @discussion = Discussion.find params[:id]
   end
 
+  def update 
+    discussion = Discussion.find params[:id]
+    discussion.update discussion_params
+    redirect_to Note.find discussion.note.id
+  end
+
   def destroy
     discussion = Discussion.find params[:id]
     discussion.destroy

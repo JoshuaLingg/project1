@@ -1,7 +1,9 @@
 
 <div class = 'container-lg title1'>
   <h1><%= @note.title %></h1>
+  
   <div class="container-lg">
+    <%= @note.created_at %>
     <% if @note.user.present? %>
       <p>Written by: <%= @note.user.name%></p>
     <% end %>

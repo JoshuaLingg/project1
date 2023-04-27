@@ -1,12 +1,13 @@
 <h1 class = 'container-lg title1' >All Notes</h1>
 <div class="container-lg">
-  <% @notes.each do |note| %>
-  <% if @notes.index(note).odd?%>
+  <% @notes.sort_by(&:created_at).reverse.each do |note| %>
+  <% if @notes.sort_by(&:created_at).reverse.index(note).odd?%>
     <div class = 'odd_note'>
   <% end %>
       <%= link_to note, :class => 'index-text' do %>
       <div class="container-lg">
         <h2 class="title1"><%= note.title %></h2>
+          <%= note.created_at %>
           <% if note.user.present? %>
               <p>Written by: <%= note.user.name%></p>
           <% end %>
@@ -23,7 +24,7 @@
           <%= link_to "Edit", edit_note_path(note.id) %>
         <% end %>
       </div>
-    <% if @notes.index(note).odd?%>
+    <% if @notes.sort_by(&:created_at).reverse.index(note).odd?%>
       </div>
     <% end %>
 
