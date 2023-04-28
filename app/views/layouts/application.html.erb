@@ -14,6 +14,7 @@
     <nav class = "navbar1">
       <h2 class = 'nav-title'>Project1</h2>
       <% if @current_user.present?%>
+        <%= link_to "Profile", "/users/#{@current_user.id}" , :class => "navbar-link" %>
         <%= link_to "Home", root_path , :class => "navbar-link"%>
         <%= link_to "Add Note", new_note_path, :class => "navbar-link" %>
         <%= link_to "Log Out (#{@current_user.name})", login_path, :method => :delete, :class => 'navbar-link' %>
