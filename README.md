@@ -1,11 +1,9 @@
-# README
+<h1>Project1   A thread App</h1>
+Joshua Ling
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails version = 5.2.8.1 
 
-Things you may want to cover:
-
-* Ruby version
+Ruby version = 2.7.8
 
 * System dependencies
 
